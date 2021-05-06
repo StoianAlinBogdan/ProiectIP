@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,22 @@ namespace FLStudio
     public partial class Form1 : Form
     {
         private Bitmap _bmp;
+        private static List<List<string>> _notes;
+        private const string Path = "Note\\";
         public Form1()
         {
             InitializeComponent();
+            DirectoryInfo d = new DirectoryInfo(Path);//Assuming Test is your Folder
+            FileInfo[] Files = d.GetFiles("*.mp3"); //Getting mp3 files
+            //mai am de rezolva partea cu extensia in plus....
+            foreach (FileInfo file in Files)
+            {
+                note.Items.Add(file.Name);
+            }
 
         }
 
+        #region Alex
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             // evenimentul de desenare
@@ -32,6 +43,7 @@ namespace FLStudio
 
             e.Graphics.DrawImage(_bmp, 0, 0);
         }
+        #endregion
 
         #region Bogdan + Simona -> note
         private void pictureBox_Click(object sender, EventArgs e)
@@ -54,5 +66,6 @@ namespace FLStudio
             b.BringToFront();
         }
         #endregion
+
     }
 }
