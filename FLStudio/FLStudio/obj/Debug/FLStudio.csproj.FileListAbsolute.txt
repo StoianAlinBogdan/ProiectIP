@@ -1,0 +1,10 @@
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe.config
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.pdb
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csprojAssemblyReference.cache
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Form1.resources
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Properties.Resources.resources
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.GenerateResource.cache
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
