@@ -16,6 +16,7 @@ namespace FLStudio
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)
@@ -31,5 +32,27 @@ namespace FLStudio
 
             e.Graphics.DrawImage(_bmp, 0, 0);
         }
+
+        #region Bogdan + Simona -> note
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            int relativeX = me.Location.X;
+            int relativeY = me.Location.Y;
+            int cellColumn = relativeX / 50;
+            var cellRow = relativeY / 20;
+            Control ac = (Control)sender;
+
+            Point locationOnForm = ac.FindForm().PointToClient(ac.Parent.PointToScreen(ac.Location));
+            Button b = new Button();
+            b.Location = new Point(locationOnForm.X + cellColumn * 50, locationOnForm.Y + cellRow * 20);
+            b.Text = "Do";
+            b.Size = new Size(50, 20);
+            b.BackColor = Color.Red;
+            b.Font = new Font("Arial", 5);
+            this.Controls.Add(b);
+            b.BringToFront();
+        }
+        #endregion
     }
 }

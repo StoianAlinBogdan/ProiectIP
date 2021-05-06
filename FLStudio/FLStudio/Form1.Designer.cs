@@ -66,11 +66,12 @@ namespace FLStudio
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(179, 67);
+            this.pictureBox.Location = new System.Drawing.Point(180, 70);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(620, 389);
             this.pictureBox.TabIndex = 3;
             this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.pictureBox_Click);
             this.pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Paint);
             // 
             // groupBox1
@@ -96,7 +97,7 @@ namespace FLStudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 461);
+            this.ClientSize = new System.Drawing.Size(812, 463);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox);

@@ -8,3 +8,13 @@ D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.GenerateReso
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe.config
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.pdb
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csprojAssemblyReference.cache
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Form1.resources
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Properties.Resources.resources
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.GenerateResource.cache
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
