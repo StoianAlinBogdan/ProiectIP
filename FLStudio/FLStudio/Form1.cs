@@ -16,10 +16,16 @@ namespace FLStudio
         private Bitmap _bmp;
         //private static List<List<string>> _notes; //nu e nevoie de asta, cred - vedem cand facem fatada
         private const string Path = "Note\\";
+        #region Andrei: PlayBar(Test)
+        PlayBar _playBar;
+        #endregion
         public Form1()
         {
             InitializeComponent();
             loadFiles();
+            #region Andrei: Initialize playBar(Test)
+            _playBar = new PlayBar(5, pictureBox.Height);
+            #endregion
         }
 
         #region Alex
@@ -34,17 +40,24 @@ namespace FLStudio
                 textboxNote.Items.Add(file.Name);
             }
         }
+
+        
+
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             // evenimentul de desenare
             _bmp = new Bitmap(pictureBox.Width, pictureBox.Height);
             Graphics g = Graphics.FromImage(_bmp);
             Pen pen = new Pen(Color.Black);
+            SolidBrush brush = new SolidBrush(Color.FromArgb(100, Color.Blue));
 
             g.Clear(Color.White);
             g.DrawLine(pen, 0, 0, pictureBox.Width, 0);
             g.DrawLine(pen, 0, 0, 0, pictureBox.Height);
 
+            #region Andrei: Drawing the bar(Test)
+            g.FillRectangle(brush, _playBar.Bar);
+            #endregion
             e.Graphics.DrawImage(_bmp, 0, 0);
         }
         #endregion
@@ -71,5 +84,28 @@ namespace FLStudio
         }
         #endregion
 
+        #region Andrei: Testing the bar movement
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if ((_playBar.Bar.X + 50) <= pictureBox.Width)
+            {
+                _playBar.MoveBar(50);
+                pictureBox.Invalidate();
+            } else
+            {
+                timer1.Enabled = false;
+                _playBar.Reset();
+                pictureBox.Invalidate();
+            }
+
+        }
+        #endregion
+
+        #region Andrei: Testing the bar movement
+        private void buttonStartSimulare_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+        #endregion
     }
 }
