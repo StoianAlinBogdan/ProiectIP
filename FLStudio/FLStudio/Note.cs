@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,11 @@ namespace FLStudio
 {
 public class Note
     {
+        private Point _position;
         private string _pathToNote;
-        private Button _noteButton;
+        private Color _noteColor;
 
-        public Note(string path, Button button)
+        public Note(string path, Point position, Color color)
         {
 
         }
