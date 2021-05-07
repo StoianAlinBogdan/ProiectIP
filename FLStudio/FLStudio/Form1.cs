@@ -14,22 +14,26 @@ namespace FLStudio
     public partial class Form1 : Form
     {
         private Bitmap _bmp;
-        private static List<List<string>> _notes;
+        //private static List<List<string>> _notes; //nu e nevoie de asta, cred - vedem cand facem fatada
         private const string Path = "Note\\";
         public Form1()
         {
             InitializeComponent();
+            loadFiles();
+        }
+
+        #region Alex
+
+        private void loadFiles()
+        {
             DirectoryInfo d = new DirectoryInfo(Path);//Assuming Test is your Folder
             FileInfo[] Files = d.GetFiles("*.mp3"); //Getting mp3 files
             //mai am de rezolva partea cu extensia in plus....
             foreach (FileInfo file in Files)
             {
-                note.Items.Add(file.Name);
+                textboxNote.Items.Add(file.Name);
             }
-
         }
-
-        #region Alex
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             // evenimentul de desenare

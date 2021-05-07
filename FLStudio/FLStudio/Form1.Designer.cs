@@ -35,7 +35,7 @@ namespace FLStudio
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.note = new System.Windows.Forms.ListBox();
+            this.textboxNote = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,21 +89,21 @@ namespace FLStudio
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.note);
+            this.groupBox2.Controls.Add(this.textboxNote);
             this.groupBox2.Location = new System.Drawing.Point(12, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(161, 456);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
-            // note
+            // textboxNote
             // 
-            this.note.FormattingEnabled = true;
-            this.note.ItemHeight = 16;
-            this.note.Location = new System.Drawing.Point(0, 40);
-            this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(155, 388);
-            this.note.TabIndex = 0;
+            this.textboxNote.FormattingEnabled = true;
+            this.textboxNote.ItemHeight = 16;
+            this.textboxNote.Location = new System.Drawing.Point(0, 40);
+            this.textboxNote.Name = "textboxNote";
+            this.textboxNote.Size = new System.Drawing.Size(155, 388);
+            this.textboxNote.TabIndex = 0;
             // 
             // Form1
             // 
@@ -131,7 +131,7 @@ namespace FLStudio
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox note;
+        private System.Windows.Forms.ListBox textboxNote;
     }
 }
 
