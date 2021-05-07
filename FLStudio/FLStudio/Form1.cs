@@ -17,14 +17,14 @@ namespace FLStudio
         //private static List<List<string>> _notes; //nu e nevoie de asta, cred - vedem cand facem fatada
         private const string Path = "Note\\";
         #region Andrei: PlayBar(Test)
-        PlayBar _playBar;
+        Simulation _playBar;
         #endregion
         public Form1()
         {
             InitializeComponent();
             loadFiles();
             #region Andrei: Initialize playBar(Test)
-            _playBar = new PlayBar(5, pictureBox.Height);
+            _playBar = new Simulation(5, pictureBox.Height);
             #endregion
         }
 
