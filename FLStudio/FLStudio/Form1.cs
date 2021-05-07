@@ -74,9 +74,12 @@ namespace FLStudio
 
             Point locationOnForm = ac.FindForm().PointToClient(ac.Parent.PointToScreen(ac.Location));
             Button b = new Button();
-            b.Location = new Point(locationOnForm.X + cellColumn * 50, locationOnForm.Y + cellRow * 20);
-            b.Text = "Do";
+
+            #region Andrei: Update(Place the notes so that they don't overlap with the playBar)
             b.Size = new Size(50, 20);
+            b.Location = new Point(locationOnForm.X + cellColumn * (b.Width + _playBar.Bar.Width) + _playBar.Bar.Width, locationOnForm.Y + cellRow * 20);
+            #endregion
+            b.Text = "Do";
             b.BackColor = Color.Red;
             b.Font = new Font("Arial", 5);
             this.Controls.Add(b);
@@ -87,9 +90,9 @@ namespace FLStudio
         #region Andrei: Testing the bar movement
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if ((_playBar.Bar.X + 50) <= pictureBox.Width)
+            if ((_playBar.Bar.X + 55) <= pictureBox.Width)
             {
-                _playBar.MoveBar(50);
+                _playBar.MoveBar(55);
                 pictureBox.Invalidate();
             } else
             {
