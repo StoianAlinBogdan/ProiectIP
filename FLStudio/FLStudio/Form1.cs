@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FLStudio
 {
     public partial class Form1 : Form
@@ -16,6 +17,8 @@ namespace FLStudio
         private Bitmap _bmp;
         //private static List<List<string>> _notes; //nu e nevoie de asta, cred - vedem cand facem fatada
         private const string Path = "Note\\";
+        Dictionary<string, string[]> propertiesNotes = NotesInfo.Init();
+
         #region Andrei: PlayBar(Test)
         Simulation _playBar;
         #endregion
@@ -71,7 +74,7 @@ namespace FLStudio
             int cellColumn = relativeX / 50;
             var cellRow = relativeY / 20;
             Control ac = (Control)sender;
-
+           
             Point locationOnForm = ac.FindForm().PointToClient(ac.Parent.PointToScreen(ac.Location));
             Button b = new Button();
 
@@ -79,8 +82,24 @@ namespace FLStudio
             b.Size = new Size(50, 20);
             b.Location = new Point(locationOnForm.X + cellColumn * (b.Width + _playBar.Bar.Width) + _playBar.Bar.Width, locationOnForm.Y + cellRow * 20);
             #endregion
-            b.Text = "Do";
-            b.BackColor = Color.Red;
+            
+            //Choose the selected note.
+            string notePath = "";
+            foreach (var item in textboxNote.SelectedItems)
+            {
+                notePath = textboxNote.GetItemText(item);
+            }
+
+            string[] props = propertiesNotes[notePath]; 
+            System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
+            int posX = cellColumn * 55;
+            int posY = cellRow * 25;
+
+            Note note = new Note(Path + notePath,new Point(posX, posY), systemColor);
+            
+
+            b.Text = props[0];
+            b.BackColor = systemColor;
             b.Font = new Font("Arial", 5);
             this.Controls.Add(b);
             b.BringToFront();
@@ -110,5 +129,7 @@ namespace FLStudio
             timer1.Enabled = true;
         }
         #endregion
+
+    
     }
 }

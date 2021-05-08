@@ -16,7 +16,9 @@ public class Note
 
         public Note(string path, Point position, Color color)
         {
-
+            _position = position;
+            _pathToNote = path;
+            _noteColor = color;
         }
     }
 }

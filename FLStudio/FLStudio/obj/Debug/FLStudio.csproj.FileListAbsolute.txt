@@ -28,3 +28,13 @@ C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.csp
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe.config
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.pdb
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csprojAssemblyReference.cache
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Form1.resources
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Properties.Resources.resources
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.GenerateResource.cache
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
+C:\Users\simon\Desktop\an3_sem2\IP\Pr\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
