@@ -37,10 +37,12 @@ public class Facade
         {
             foreach (Note n in _notes)
             {
-                if (_playBar.Bar.X == n.XPosition+55) //aici iar nu se respecta PCM (vezi curs 7 slide 37) 
+                if (_playBar.GetPlayBarX == n.XPosition+55) //aici iar nu se respecta PCM (vezi curs 7 slide 37) 
                 {
-                    SoundPlayer splayer = new SoundPlayer(n.PathToNote);
-                    splayer.Play(); //TODO: multiple sounds at once -> nu merge cu SoundPlayer (nu permite windows) - se poate cu un obiect de tip mediaplayer, dar e mai complicat...
+                    #region Andrei: Possible solution for playing multiple sounds
+                    var player = new WMPLib.WindowsMediaPlayer();
+                    player.URL = n.PathToNote;
+                    #endregion
                 }
             }
         }

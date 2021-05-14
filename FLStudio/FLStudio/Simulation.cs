@@ -19,10 +19,18 @@ namespace FLStudio
             _playSpeed = playSpeed;
         }
 
-        public Rectangle Bar{
+        public Rectangle Bar {
             get { return _bar; }
         }
 
+        public int GetPlayBarX {
+            get { return _bar.X; }    
+        }
+
+        public int GetPlayBarWidth
+        {
+            get { return _bar.Width; }
+        }
 
         public void MoveBar(int offset)
         {
