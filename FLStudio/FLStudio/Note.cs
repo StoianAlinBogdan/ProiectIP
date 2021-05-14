@@ -20,5 +20,21 @@ public class Note
             _pathToNote = path;
             _noteColor = color;
         }
+
+        public int XPosition
+        {
+            get
+            {
+                return _position.X;
+            }
+        }
+
+        public string PathToNote
+        {
+            get
+            {
+                return _pathToNote;
+            }
+        }
     }
 }

@@ -15,19 +15,15 @@ namespace FLStudio
     public partial class Form1 : Form
     {
         private Bitmap _bmp;
-        //private static List<List<string>> _notes; //nu e nevoie de asta, cred - vedem cand facem fatada
         private const string Path = "Note\\";
-        Dictionary<string, string[]> propertiesNotes = NotesInfo.Init();
 
-        #region Andrei: PlayBar(Test)
-        Simulation _playBar;
-        #endregion
+        private Facade _facade;
         public Form1()
         {
             InitializeComponent();
             loadFiles();
             #region Andrei: Initialize playBar(Test)
-            _playBar = new Simulation(5, pictureBox.Height);
+            _facade = new Facade(5, pictureBox.Height);
             #endregion
         }
 
@@ -36,7 +32,7 @@ namespace FLStudio
         private void loadFiles()
         {
             DirectoryInfo d = new DirectoryInfo(Path);//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles("*.mp3"); //Getting mp3 files
+            FileInfo[] Files = d.GetFiles("*.wav"); //Getting wav files
             //mai am de rezolva partea cu extensia in plus....
             foreach (FileInfo file in Files)
             {
@@ -45,7 +41,7 @@ namespace FLStudio
         }
 
         
-
+        
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             // evenimentul de desenare
@@ -59,7 +55,7 @@ namespace FLStudio
             g.DrawLine(pen, 0, 0, 0, pictureBox.Height);
 
             #region Andrei: Drawing the bar(Test)
-            g.FillRectangle(brush, _playBar.Bar);
+            g.FillRectangle(brush, _facade.PlayBar.Bar);
             #endregion
             e.Graphics.DrawImage(_bmp, 0, 0);
         }
@@ -80,26 +76,22 @@ namespace FLStudio
 
             #region Andrei: Update(Place the notes so that they don't overlap with the playBar)
             b.Size = new Size(50, 20);
-            b.Location = new Point(locationOnForm.X + cellColumn * (b.Width + _playBar.Bar.Width) + _playBar.Bar.Width, locationOnForm.Y + cellRow * 20);
+            b.Location = new Point(locationOnForm.X + cellColumn * (b.Width + _facade.PlayBar.Bar.Width) + _facade.PlayBar.Bar.Width, locationOnForm.Y + cellRow * 20);
             #endregion
-            
-            //Choose the selected note.
-            string notePath = "";
-            foreach (var item in textboxNote.SelectedItems)
-            {
-                notePath = textboxNote.GetItemText(item);
-            }
 
-            string[] props = propertiesNotes[notePath]; 
-            System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
+            //Choose the selected note.
+            //refactorization starts here
+            //trebuie NEAPARAT schimbat apelul metodelor din obiecte returnate din fatada!!!!!!!!!
+            //deocamdata am lasat asa ca sa fie ceva functional si care respecta oarecum DP-ul, dar NU se respecta principiul cunoasterii minime!
+            string notePath = textboxNote.GetItemText(textboxNote.SelectedItem);
             int posX = cellColumn * 55;
             int posY = cellRow * 25;
 
-            Note note = new Note(Path + notePath,new Point(posX, posY), systemColor);
-            
 
-            b.Text = props[0];
-            b.BackColor = systemColor;
+            // Note note = new Note(Path + notePath,new Point(posX, posY), systemColor);
+            (string, Color) t = _facade.addNote(notePath, posX, posY);
+            b.Text = t.Item1;
+            b.BackColor = t.Item2;
             b.Font = new Font("Arial", 5);
             this.Controls.Add(b);
             b.BringToFront();
@@ -109,17 +101,17 @@ namespace FLStudio
         #region Andrei: Testing the bar movement
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if ((_playBar.Bar.X + 55) <= pictureBox.Width)
+            if ((_facade.PlayBar.Bar.X + 55) <= pictureBox.Width)
             {
-                _playBar.MoveBar(55);
+                _facade.PlayBar.MoveBar(55);
                 pictureBox.Invalidate();
             } else
             {
                 timer1.Enabled = false;
-                _playBar.Reset();
+                _facade.PlayBar.Reset();
                 pictureBox.Invalidate();
             }
-
+            _facade.collision();
         }
         #endregion
 
