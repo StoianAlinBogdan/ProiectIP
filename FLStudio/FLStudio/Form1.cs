@@ -87,8 +87,6 @@ namespace FLStudio
             int posX = cellColumn * 55;
             int posY = cellRow * 25;
 
-
-            // Note note = new Note(Path + notePath,new Point(posX, posY), systemColor);
             (string, Color) t = _facade.addNote(notePath, posX, posY);
             b.Text = t.Item1;
             b.BackColor = t.Item2;
@@ -101,17 +99,21 @@ namespace FLStudio
         #region Andrei: Testing the bar movement
         private void timer1_Tick(object sender, EventArgs e)
         {
+            _facade.runSimulation(timer1, pictureBox.Width);
+            pictureBox.Invalidate();
+            /*
             if ((_facade.PlayBar.GetPlayBarX + 55) <= pictureBox.Width)
             {
-                _facade.PlayBar.MoveBar(55);
+                _facade.PlayBar.MoveBar(55); //PCM
                 pictureBox.Invalidate();
             } else
             {
                 timer1.Enabled = false;
-                _facade.PlayBar.Reset();
+                _facade.resetBar();
                 pictureBox.Invalidate();
             }
             _facade.collision();
+            */
         }
         #endregion
 

@@ -28,16 +28,27 @@ public class Facade
                                             //si cam asa trebuie facut si pentru playbar
 
         }
-        public void startSimulation()
+        public void runSimulation(System.Windows.Forms.Timer timer, int width)
         {
-            //TODO: move functionality from Form to here somehow! -> deleaga cat mai mult fatadei!
+            if ((_playBar.GetPlayBarX + 55) <= width)
+            {
+                _playBar.MoveBar(55);
+
+            }
+            else
+            {
+                timer.Enabled = false;
+                resetBar();
+            }
+            collision();
+
         }
 
         public void collision()
         {
             foreach (Note n in _notes)
             {
-                if (_playBar.GetPlayBarX == n.XPosition+55) //aici iar nu se respecta PCM (vezi curs 7 slide 37) 
+                if (_playBar.GetPlayBarX == n.XPosition+55) 
                 {
                     #region Andrei: Possible solution for playing multiple sounds
                     var player = new WMPLib.WindowsMediaPlayer();
@@ -53,6 +64,11 @@ public class Facade
             {
                 return _playBar;
             }
+        }
+
+        public void resetBar()
+        {
+            _playBar.Reset();
         }
     }
 }

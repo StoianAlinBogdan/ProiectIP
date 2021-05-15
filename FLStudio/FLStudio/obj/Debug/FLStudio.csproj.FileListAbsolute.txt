@@ -50,3 +50,5 @@ C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug\Interop.WMPLib.dll
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.ResolveComReference.cache
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\Interop.WMPLib.dll
+D:\An 3\IP\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.ResolveComReference.cache
