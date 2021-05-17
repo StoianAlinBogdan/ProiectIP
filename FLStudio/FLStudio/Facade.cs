@@ -4,31 +4,39 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FLStudio
 {
 public class Facade
     {
-        private List<Note> _notes = new List<Note>();
+        //private List<Note> _notes = new List<Note>();
+        private List<Note>[] _notes;
         private Simulation _playBar;
 
-        public Facade(int playBarWidth, int playBarHeight)
+        public Facade(int playBarWidth, int playBarHeight, int pictureBoxWidth)
         {
             _playBar = new Simulation(playBarWidth, playBarHeight);
+
+            int columns = pictureBoxWidth / 55;
+            _notes = new List<Note>[columns + 1];
+            for (int i = 0; i <= columns; i++)
+                _notes[i] = new List<Note>();
+
             NotesInfo.Init();
         }
 
-        public (string, System.Drawing.Color) addNote(string notePath, int posX, int posY) //functia instantiaza o nota, o adauga la lista, apoi returneaza textul si culoarea pentru buton
+        public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY) //functia instantiaza o nota, o adauga la lista, apoi returneaza textul si culoarea pentru buton
         {
             string[] props = NotesInfo.Properties[notePath];
             System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
             Note n = new Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
-            _notes.Add(n);
+            _notes[posX / 55].Add(n);
             return (props[0], systemColor); //asta chiar respecta PCM, pentru ca clientul stie doar de addNote si addNote returneaza doar pentru client
                                             //si cam asa trebuie facut si pentru playbar
 
         }
-        public void runSimulation(System.Windows.Forms.Timer timer, int width)
+        public void RunSimulation(System.Windows.Forms.Timer timer, int width)
         {
             if ((_playBar.GetPlayBarX + 55) <= width)
             {
@@ -38,17 +46,17 @@ public class Facade
             else
             {
                 timer.Enabled = false;
-                resetBar();
+                ResetBar();
             }
-            collision();
+            Collision();
 
         }
 
-        public void collision()
+        private void Collision()
         {
-            foreach (Note n in _notes)
+            if (_playBar.GetPlayBarX < 55 * _notes.Length && _playBar.GetPlayBarX > 0)
             {
-                if (_playBar.GetPlayBarX == n.XPosition+55) 
+                foreach (Note n in _notes[(_playBar.GetPlayBarX - 55) / 55])
                 {
                     #region Andrei: Possible solution for playing multiple sounds
                     var player = new WMPLib.WindowsMediaPlayer();
@@ -66,9 +74,17 @@ public class Facade
             }
         }
 
-        public void resetBar()
+        public void ResetBar()
         {
             _playBar.Reset();
         }
+
+        public void ChangeSimulationSpeed(int speed, Timer timer)
+        {
+            timer.Interval += (_playBar.PlaySpeed - speed) * 100;
+            _playBar.PlaySpeed = speed;
+        }
+
+
     }
 }

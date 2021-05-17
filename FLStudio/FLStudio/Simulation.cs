@@ -13,7 +13,7 @@ namespace FLStudio
         private Rectangle _bar;
         private int _playSpeed;
 
-        public Simulation(int width, int height, int x = 0, int y = 0, int playSpeed = 100)
+        public Simulation(int width, int height, int x = 0, int y = 0, int playSpeed = 1)
         {
             _bar = new Rectangle(x, y, width, height);
             _playSpeed = playSpeed;
@@ -50,22 +50,6 @@ namespace FLStudio
             }
 
             set => _playSpeed = value;
-        }
-
-        public void changeSpeed(int amount)
-        {
-            _playSpeed += amount;
-            if(_playSpeed < 100)
-            {
-                _playSpeed = 100;
-                return;
-            }
-
-            if(_playSpeed > 1000)
-            {
-                _playSpeed = 1000;
-                return;
-            }
         }
     }
     #endregion

@@ -23,7 +23,7 @@ namespace FLStudio
             InitializeComponent();
             loadFiles();
             #region Andrei: Initialize playBar(Test)
-            _facade = new Facade(5, pictureBox.Height);
+            _facade = new Facade(5, pictureBox.Height, pictureBox.Width);
             #endregion
         }
 
@@ -36,7 +36,7 @@ namespace FLStudio
             //mai am de rezolva partea cu extensia in plus....
             foreach (FileInfo file in Files)
             {
-                textboxNote.Items.Add(file.Name);
+                textboxNote.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
             }
         }
 
@@ -83,11 +83,11 @@ namespace FLStudio
             //refactorization starts here
             //trebuie NEAPARAT schimbat apelul metodelor din obiecte returnate din fatada!!!!!!!!!
             //deocamdata am lasat asa ca sa fie ceva functional si care respecta oarecum DP-ul, dar NU se respecta principiul cunoasterii minime!
-            string notePath = textboxNote.GetItemText(textboxNote.SelectedItem);
+            string notePath = textboxNote.GetItemText(textboxNote.SelectedItem) + ".wav";
             int posX = cellColumn * 55;
             int posY = cellRow * 25;
 
-            (string, Color) t = _facade.addNote(notePath, posX, posY);
+            (string, Color) t = _facade.AddNote(notePath, posX, posY);
             b.Text = t.Item1;
             b.BackColor = t.Item2;
             b.Font = new Font("Arial", 5);
@@ -95,35 +95,28 @@ namespace FLStudio
             b.BringToFront();
         }
         #endregion
-
-        #region Andrei: Testing the bar movement
         private void timer1_Tick(object sender, EventArgs e)
         {
-            _facade.runSimulation(timer1, pictureBox.Width);
+            _facade.RunSimulation(timer1, pictureBox.Width);
             pictureBox.Invalidate();
-            /*
-            if ((_facade.PlayBar.GetPlayBarX + 55) <= pictureBox.Width)
-            {
-                _facade.PlayBar.MoveBar(55); //PCM
-                pictureBox.Invalidate();
-            } else
-            {
-                timer1.Enabled = false;
-                _facade.resetBar();
-                pictureBox.Invalidate();
-            }
-            _facade.collision();
-            */
         }
-        #endregion
 
         #region Andrei: Testing the bar movement
         private void buttonStartSimulare_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
         }
+
         #endregion
 
-    
+        private void trackBarSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            _facade.ChangeSimulationSpeed(trackBarSpeed.Value, timer1);
+        }
+
+        private void textboxNote_Click(object sender, EventArgs e)
+        {
+            pictureBox.Enabled = true;
+        }
     }
 }
