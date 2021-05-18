@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace FLStudio
 {
+    /// <summary>
+    /// Class <c>NotesInfo</c> returns details about the available notes.
+    /// <param name="_propertiesNotes">Contains all the infromations of a note.</param>
+    /// </summary>
     static class NotesInfo
     {
         #region Simona: Dictionary with properties notes.
@@ -60,6 +64,9 @@ namespace FLStudio
             _propertiesNotes.Add("g-5.wav", new string[] { "SOL", "LightCyan" });
 
         }
+        /// <summary>
+        /// Getter for properties note.
+        /// </summary>
         public static Dictionary<string, string[]> Properties
         {
             get

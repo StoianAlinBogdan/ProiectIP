@@ -28,7 +28,9 @@ namespace FLStudio
         }
 
         #region Alex
-
+        /// <summary>
+        /// Loads all the music notes files.
+        /// </summary>
         private void loadFiles()
         {
             DirectoryInfo d = new DirectoryInfo(Path);//Assuming Test is your Folder
@@ -41,7 +43,11 @@ namespace FLStudio
         }
 
         
-        
+        /// <summary>
+        /// Randers the play bar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
             // evenimentul de desenare
@@ -60,7 +66,11 @@ namespace FLStudio
             e.Graphics.DrawImage(_bmp, 0, 0);
         }
         #endregion
-
+        /// <summary>
+        /// Places the block notes and links them to the appropriate sound file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         #region Bogdan + Simona -> note
         private void pictureBox_Click(object sender, EventArgs e)
         {
@@ -95,12 +105,16 @@ namespace FLStudio
             b.BringToFront();
         }
         #endregion
+        /// <summary>
+        /// Starts simulation.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             _facade.RunSimulation(timer1, pictureBox.Width);
             pictureBox.Invalidate();
         }
-
         #region Andrei: Testing the bar movement
         private void buttonStartSimulare_Click(object sender, EventArgs e)
         {
@@ -108,7 +122,11 @@ namespace FLStudio
         }
 
         #endregion
-
+        /// <summary>
+        /// Change the tempo.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void trackBarSpeed_ValueChanged(object sender, EventArgs e)
         {
             _facade.ChangeSimulationSpeed(trackBarSpeed.Value, timer1);

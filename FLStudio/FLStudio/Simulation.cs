@@ -8,11 +8,24 @@ using System.Threading.Tasks;
 namespace FLStudio
 {
     #region Andrei: Simulation Class
+    /// <summary>
+    /// Class <c>Simulation</c> controls and properties for the play bar.
+    /// <param name="_bar">Rectangle object that represent the bar.</param>
+    /// <param name="_playSpeed">Represent the tempo.</param>
+    /// </summary>
     public class Simulation
     {
         private Rectangle _bar;
         private int _playSpeed;
 
+        /// <summary>
+        /// Init constructor for <c>Simulation</c> class.
+        /// </summary>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="playSpeed"></param>
         public Simulation(int width, int height, int x = 0, int y = 0, int playSpeed = 1)
         {
             _bar = new Rectangle(x, y, width, height);

@@ -8,12 +8,23 @@ using System.Windows.Forms;
 
 namespace FLStudio
 {
-public class Facade
+    /// <summary>
+    /// Class <Facade> implements facade design pattern.
+    /// <param name="_notes">A list that contains all the slected notes.</param>
+    /// <param name="_playBar">Bar used for playing sounds.</param>
+    /// </summary>
+    public class Facade
     {
         //private List<Note> _notes = new List<Note>();
         private List<Note>[] _notes;
         private Simulation _playBar;
 
+        /// <summary>
+        /// Init contructor for <c>Facade</c> class.
+        /// </summary>
+        /// <param name="playBarWidth"></param>
+        /// <param name="playBarHeight"></param>
+        /// <param name="pictureBoxWidth"></param>
         public Facade(int playBarWidth, int playBarHeight, int pictureBoxWidth)
         {
             _playBar = new Simulation(playBarWidth, playBarHeight);
@@ -25,7 +36,13 @@ public class Facade
 
             NotesInfo.Init();
         }
-
+        /// <summary>
+        /// Method that add notes to _notes list.
+        /// </summary>
+        /// <param name="notePath"></param>
+        /// <param name="posX"></param>
+        /// <param name="posY"></param>
+        /// <returns></returns>
         public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY) //functia instantiaza o nota, o adauga la lista, apoi returneaza textul si culoarea pentru buton
         {
             string[] props = NotesInfo.Properties[notePath];
@@ -36,6 +53,11 @@ public class Facade
                                             //si cam asa trebuie facut si pentru playbar
 
         }
+        /// <summary>
+        /// Updates the bar position and checks for collision.
+        /// </summary>
+        /// <param name="timer"></param>
+        /// <param name="width"></param>
         public void RunSimulation(System.Windows.Forms.Timer timer, int width)
         {
             if ((_playBar.GetPlayBarX + 55) <= width)
@@ -51,7 +73,9 @@ public class Facade
             Collision();
 
         }
-
+        /// <summary>
+        /// Checks for collisions between bar and block notes.
+        /// </summary>
         private void Collision()
         {
             if (_playBar.GetPlayBarX < 55 * _notes.Length && _playBar.GetPlayBarX > 0)
@@ -65,7 +89,9 @@ public class Facade
                 }
             }
         }
-
+        /// <summary>
+        /// Getter for play bar.
+        /// </summary>
         public Simulation PlayBar
         {
             get
@@ -73,7 +99,9 @@ public class Facade
                 return _playBar;
             }
         }
-
+        /// <summary>
+        /// Set the bar at the initial position.
+        /// </summary>
         public void ResetBar()
         {
             _playBar.Reset();

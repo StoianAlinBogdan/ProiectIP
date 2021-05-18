@@ -8,12 +8,24 @@ using System.Windows.Forms;
 
 namespace FLStudio
 {
-public class Note
+    /// <summary>
+    /// Class <c>Note</c> hold the informations about a musical note.
+    /// <param name="_position">Coords of a note block.</param>
+    /// <param name="_pathToNote">Path to a particular sound.</param>
+    /// <param name="_noteColor">Color of a note block.</param>
+    /// </summary>
+    public class Note
     {
         private Point _position;
         private string _pathToNote;
         private Color _noteColor;
 
+        /// <summary>
+        /// Init constructor of a Note class. 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="position"></param>
+        /// <param name="color"></param>
         public Note(string path, Point position, Color color)
         {
             _position = position;
@@ -21,6 +33,9 @@ public class Note
             _noteColor = color;
         }
 
+        /// <summary>
+        /// Getter for x position of a note.
+        /// </summary>
         public int XPosition
         {
             get
@@ -29,6 +44,9 @@ public class Note
             }
         }
 
+        /// <summary>
+        /// Getter for path note.
+        /// </summary>
         public string PathToNote
         {
             get
