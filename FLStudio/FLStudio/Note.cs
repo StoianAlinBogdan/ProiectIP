@@ -44,6 +44,14 @@ namespace FLStudio
             }
         }
 
+        public int YPosition
+        {
+            get
+            {
+                return _position.Y;
+            }
+        }
+
         /// <summary>
         /// Getter for path note.
         /// </summary>

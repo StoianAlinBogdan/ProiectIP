@@ -64,3 +64,15 @@ C:\Users\simon\Desktop\an3_sem2\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug
 C:\Users\simon\Desktop\an3_sem2\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
 C:\Users\simon\Desktop\an3_sem2\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
 C:\Users\simon\Desktop\an3_sem2\IP\Proiect\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
+D:\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe.config
+D:\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.exe
+D:\ProiectIP\FLStudio\FLStudio\bin\Debug\FLStudio.pdb
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csprojAssemblyReference.cache
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\Interop.WMPLib.dll
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.ResolveComReference.cache
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Form1.resources
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.Properties.Resources.resources
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.GenerateResource.cache
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
+D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb

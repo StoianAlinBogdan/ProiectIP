@@ -53,6 +53,34 @@ namespace FLStudio
                                             //si cam asa trebuie facut si pentru playbar
 
         }
+
+        #region Alex: Stergere control si nota cand apasam click dreapta pe nota focusata
+        public void DeleteNote(Control.ControlCollection controls, int pictureBoxX, int pictureBoxY)
+        {
+
+            foreach (Control control in controls)
+            {
+                if (control is Button)
+                {
+                    if (control.Focused)
+                    {
+                        int x = (control.Location.X - pictureBoxX) / 55;
+                        int y = (control.Location.Y - pictureBoxY);
+                        foreach (Note note in _notes[x])
+                        {
+                            if (note.YPosition == y)
+                            {
+                                _notes[x].Remove(note);
+                                controls.Remove((Control)control);
+                                break;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        #endregion
         /// <summary>
         /// Updates the bar position and checks for collision.
         /// </summary>

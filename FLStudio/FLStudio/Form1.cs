@@ -95,14 +95,24 @@ namespace FLStudio
             //deocamdata am lasat asa ca sa fie ceva functional si care respecta oarecum DP-ul, dar NU se respecta principiul cunoasterii minime!
             string notePath = textboxNote.GetItemText(textboxNote.SelectedItem) + ".wav";
             int posX = cellColumn * 55;
-            int posY = cellRow * 25;
+            int posY = cellRow * 20;
 
-            (string, Color) t = _facade.AddNote(notePath, posX, posY);
-            b.Text = t.Item1;
-            b.BackColor = t.Item2;
-            b.Font = new Font("Arial", 5);
-            this.Controls.Add(b);
-            b.BringToFront();
+            #region Alex: Click stanga adauga nota, click dreapta sterge
+            if (me.Button == MouseButtons.Left)
+            {
+                (string, Color) t = _facade.AddNote(notePath, posX, posY);
+                b.Text = t.Item1;
+                b.BackColor = t.Item2;
+                b.Font = new Font("Arial", 5);
+                Controls.Add(b);
+                b.BringToFront();
+            }
+            else if (me.Button == MouseButtons.Right)
+            {
+
+                _facade.DeleteNote(Controls, pictureBox.Bounds.X, pictureBox.Bounds.Y);
+            }
+            #endregion
         }
         #endregion
         /// <summary>
