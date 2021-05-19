@@ -22,12 +22,9 @@ namespace FLStudio
         {
             InitializeComponent();
             loadFiles();
-            #region Andrei: Initialize playBar(Test)
             _facade = new Facade(5, pictureBox.Height, pictureBox.Width);
-            #endregion
         }
 
-        #region Alex
         /// <summary>
         /// Loads all the music notes files.
         /// </summary>
@@ -60,12 +57,9 @@ namespace FLStudio
             g.DrawLine(pen, 0, 0, pictureBox.Width, 0);
             g.DrawLine(pen, 0, 0, 0, pictureBox.Height);
 
-            #region Andrei: Drawing the bar(Test)
             g.FillRectangle(brush, _facade.PlayBar.Bar);
-            #endregion
             e.Graphics.DrawImage(_bmp, 0, 0);
         }
-        #endregion
         /// <summary>
         /// Places the block notes and links them to the appropriate sound file.
         /// </summary>

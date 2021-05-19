@@ -1,0 +1,7 @@
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\bin\Debug\Note.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\bin\Debug\Note.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\obj\Debug\Note.csprojAssemblyReference.cache
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\obj\Debug\Note.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\obj\Debug\Note.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\obj\Debug\Note.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\Note\obj\Debug\Note.csproj.CopyComplete

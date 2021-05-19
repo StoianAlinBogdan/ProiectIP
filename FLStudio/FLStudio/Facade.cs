@@ -5,6 +5,10 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Note;
+using NotesInfo;
+using Simulation;
+
 
 namespace FLStudio
 {
@@ -16,8 +20,8 @@ namespace FLStudio
     public class Facade
     {
         //private List<Note> _notes = new List<Note>();
-        private List<Note>[] _notes;
-        private Simulation _playBar;
+        private List<Note.Note>[] _notes;
+        private Simulation.Simulation _playBar;
 
         /// <summary>
         /// Init contructor for <c>Facade</c> class.
@@ -27,14 +31,14 @@ namespace FLStudio
         /// <param name="pictureBoxWidth"></param>
         public Facade(int playBarWidth, int playBarHeight, int pictureBoxWidth)
         {
-            _playBar = new Simulation(playBarWidth, playBarHeight);
+            _playBar = new Simulation.Simulation(playBarWidth, playBarHeight);
 
             int columns = pictureBoxWidth / 55;
-            _notes = new List<Note>[columns + 1];
+            _notes = new List<Note.Note>[columns + 1];
             for (int i = 0; i <= columns; i++)
-                _notes[i] = new List<Note>();
+                _notes[i] = new List<Note.Note>();
 
-            NotesInfo.Init();
+            NotesInfo.NotesInfo.Init();
         }
         /// <summary>
         /// Method that add notes to _notes list.
@@ -45,9 +49,9 @@ namespace FLStudio
         /// <returns></returns>
         public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY)
         {
-            string[] props = NotesInfo.Properties[notePath];
+            string[] props = NotesInfo.NotesInfo.Properties[notePath];
             System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
-            Note n = new Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
+            Note.Note n = new Note.Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
             _notes[posX / 55].Add(n);
             return (props[0], systemColor);
 
@@ -65,7 +69,7 @@ namespace FLStudio
                     {
                         int x = (control.Location.X - pictureBoxX) / 55;
                         int y = (control.Location.Y - pictureBoxY);
-                        foreach (Note note in _notes[x])
+                        foreach (Note.Note note in _notes[x])
                         {
                             if (note.YPosition == y)
                             {
@@ -107,19 +111,17 @@ namespace FLStudio
         {
             if (_playBar.GetPlayBarX < 55 * _notes.Length && _playBar.GetPlayBarX > 0)
             {
-                foreach (Note n in _notes[(_playBar.GetPlayBarX - 55) / 55])
+                foreach (Note.Note n in _notes[(_playBar.GetPlayBarX - 55) / 55])
                 {
-                    #region Andrei: Possible solution for playing multiple sounds
                     var player = new WMPLib.WindowsMediaPlayer();
                     player.URL = n.PathToNote;
-                    #endregion
                 }
             }
         }
         /// <summary>
         /// Getter for play bar.
         /// </summary>
-        public Simulation PlayBar
+        public Simulation.Simulation PlayBar
         {
             get
             {

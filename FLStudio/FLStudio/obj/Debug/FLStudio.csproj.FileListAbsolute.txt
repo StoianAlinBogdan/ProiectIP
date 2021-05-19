@@ -76,3 +76,9 @@ D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.GenerateResource.cache
 D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CoreCompileInputs.cache
 D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.exe
 D:\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\Interop.WMPLib.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.ResolveComReference.cache
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\bin\Debug\NotesInfo.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\bin\Debug\Note.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\bin\Debug\NotesInfo.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CopyComplete
