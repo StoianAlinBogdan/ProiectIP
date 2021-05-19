@@ -22,6 +22,7 @@ namespace FLStudio
         {
             InitializeComponent();
             loadFiles();
+            KeyPreview = true;
             _facade = new Facade(5, pictureBox.Height, pictureBox.Width);
         }
 
@@ -93,10 +94,9 @@ namespace FLStudio
                 Controls.Add(b);
                 b.BringToFront();
             }
-            else if (me.Button == MouseButtons.Right)
+            else
             {
-
-                _facade.DeleteNote(Controls, pictureBox.Bounds.X, pictureBox.Bounds.Y);
+                //nothing
             }
         }
         /// <summary>
@@ -129,5 +129,22 @@ namespace FLStudio
         {
             pictureBox.Enabled = true;
         }
+
+        #region Alex: Stergere note de la  tastatura(tasta D) si play la nota respectiva tot de la tastatura(tasta P)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.D:
+                    _facade.DeleteNote(Controls, pictureBox.Bounds.X, pictureBox.Bounds.Y);
+                    break;
+                case Keys.P:
+                    _facade.playANote(Controls, pictureBox.Bounds.X, pictureBox.Bounds.Y);
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
     }
 }

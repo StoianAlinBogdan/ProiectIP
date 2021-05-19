@@ -57,7 +57,7 @@ namespace FLStudio
 
         }
 
-        #region Alex: Stergere control si nota cand apasam click dreapta pe nota focusata
+        #region Alex: Stergere control si nota cand apasam tasta D
         public void DeleteNote(Control.ControlCollection controls, int pictureBoxX, int pictureBoxY)
         {
 
@@ -83,6 +83,33 @@ namespace FLStudio
                 }
             }
         }
+
+        public void playANote(Control.ControlCollection controls, int pictureBoxX, int pictureBoxY)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Button)
+                {
+                    if (control.Focused)
+                    {
+                        int x = (control.Location.X - pictureBoxX) / 55;
+                        int y = (control.Location.Y - pictureBoxY);
+                        foreach (Note.Note note in _notes[x])
+                        {
+                            if (note.YPosition == y)
+                            {
+                                var player = new WMPLib.WindowsMediaPlayer();
+                                player.URL = note.PathToNote;
+                                break;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+
         #endregion
         /// <summary>
         /// Updates the bar position and checks for collision.
