@@ -71,33 +71,25 @@ namespace FLStudio
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        #region Bogdan + Simona -> note
         private void pictureBox_Click(object sender, EventArgs e)
         {
             MouseEventArgs me = (MouseEventArgs)e;
             int relativeX = me.Location.X;
             int relativeY = me.Location.Y;
-            int cellColumn = relativeX / 50;
+            int cellColumn = relativeX / 55;
             var cellRow = relativeY / 20;
             Control ac = (Control)sender;
            
             Point locationOnForm = ac.FindForm().PointToClient(ac.Parent.PointToScreen(ac.Location));
             Button b = new Button();
 
-            #region Andrei: Update(Place the notes so that they don't overlap with the playBar)
             b.Size = new Size(50, 20);
             b.Location = new Point(locationOnForm.X + cellColumn * (b.Width + _facade.PlayBar.GetPlayBarWidth) + _facade.PlayBar.GetPlayBarWidth, locationOnForm.Y + cellRow * 20);
-            #endregion
 
-            //Choose the selected note.
-            //refactorization starts here
-            //trebuie NEAPARAT schimbat apelul metodelor din obiecte returnate din fatada!!!!!!!!!
-            //deocamdata am lasat asa ca sa fie ceva functional si care respecta oarecum DP-ul, dar NU se respecta principiul cunoasterii minime!
             string notePath = textboxNote.GetItemText(textboxNote.SelectedItem) + ".wav";
             int posX = cellColumn * 55;
             int posY = cellRow * 20;
 
-            #region Alex: Click stanga adauga nota, click dreapta sterge
             if (me.Button == MouseButtons.Left)
             {
                 (string, Color) t = _facade.AddNote(notePath, posX, posY);
@@ -112,9 +104,7 @@ namespace FLStudio
 
                 _facade.DeleteNote(Controls, pictureBox.Bounds.X, pictureBox.Bounds.Y);
             }
-            #endregion
         }
-        #endregion
         /// <summary>
         /// Starts simulation.
         /// </summary>
@@ -125,13 +115,12 @@ namespace FLStudio
             _facade.RunSimulation(timer1, pictureBox.Width);
             pictureBox.Invalidate();
         }
-        #region Andrei: Testing the bar movement
+
         private void buttonStartSimulare_Click(object sender, EventArgs e)
         {
             timer1.Enabled = true;
         }
 
-        #endregion
         /// <summary>
         /// Change the tempo.
         /// </summary>

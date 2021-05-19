@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace FLStudio
 {
-    #region Andrei: Simulation Class
     /// <summary>
     /// Class <c>Simulation</c> controls and properties for the play bar.
     /// <param name="_bar">Rectangle object that represent the bar.</param>
@@ -65,5 +64,4 @@ namespace FLStudio
             set => _playSpeed = value;
         }
     }
-    #endregion
 }

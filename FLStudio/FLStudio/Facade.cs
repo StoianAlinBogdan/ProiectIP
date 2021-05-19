@@ -43,14 +43,13 @@ namespace FLStudio
         /// <param name="posX"></param>
         /// <param name="posY"></param>
         /// <returns></returns>
-        public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY) //functia instantiaza o nota, o adauga la lista, apoi returneaza textul si culoarea pentru buton
+        public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY)
         {
             string[] props = NotesInfo.Properties[notePath];
             System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
             Note n = new Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
             _notes[posX / 55].Add(n);
-            return (props[0], systemColor); //asta chiar respecta PCM, pentru ca clientul stie doar de addNote si addNote returneaza doar pentru client
-                                            //si cam asa trebuie facut si pentru playbar
+            return (props[0], systemColor);
 
         }
 

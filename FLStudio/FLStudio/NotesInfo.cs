@@ -12,7 +12,6 @@ namespace FLStudio
     /// </summary>
     static class NotesInfo
     {
-        #region Simona: Dictionary with properties notes.
         private static Dictionary<string, string[]> _propertiesNotes = new Dictionary<string, string[]>();
         public static void Init()
         {
@@ -74,6 +73,5 @@ namespace FLStudio
                 return _propertiesNotes;
             }
         }
-        #endregion
     }
 }
