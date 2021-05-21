@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
-using Note;
-using NotesInfo;
 using Simulation;
-
 
 namespace FLStudio
 {
@@ -53,12 +45,14 @@ namespace FLStudio
         /// <returns></returns>
         public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY)
         {
+            
             string[] props = NotesInfo.NotesInfo.Properties[notePath];
             System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
             Note.Note n = new Note.Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
             _notes[posX / 55].Add(n);
             return (props[0], systemColor);
-
+         
+            
         }
 
         #region Alex: Stergere control si nota cand apasam tasta D

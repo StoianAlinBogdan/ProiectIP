@@ -83,7 +83,6 @@ C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\bin\Debug\Note.pdb
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\bin\Debug\NotesInfo.pdb
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CopyComplete
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\NotesInfo.dll
-D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\Note.pdb
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\NotesInfo.pdb
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\Interop.WMPLib.dll
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.ResolveComReference.cache
@@ -108,3 +107,5 @@ C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\FLStudio\obj\Debug\FLSt
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\FLStudio\obj\Debug\FLStudio.csproj.CopyComplete
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\FLStudio\obj\Debug\FLStudio.exe
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\FLStudio\obj\Debug\FLStudio.pdb
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\Simulation.dll
+D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\Simulation.pdb

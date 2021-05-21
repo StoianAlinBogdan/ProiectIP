@@ -31,12 +31,20 @@ namespace FLStudio
         /// </summary>
         private void loadFiles()
         {
-            DirectoryInfo d = new DirectoryInfo(Path);//Assuming Test is your Folder
-            FileInfo[] Files = d.GetFiles("*.wav"); //Getting wav files
-            //mai am de rezolva partea cu extensia in plus....
-            foreach (FileInfo file in Files)
+            try
             {
-                textboxNote.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+                DirectoryInfo d = new DirectoryInfo(Path);//Assuming Test is your Folder
+                FileInfo[] Files = d.GetFiles("*.wav"); //Getting wav files
+                                                        //mai am de rezolva partea cu extensia in plus....
+                foreach (FileInfo file in Files)
+                {
+                    textboxNote.Items.Add(file.Name.Substring(0, file.Name.Length - 4));
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Imi pare rau, dar fara fisierul de note muzicale, aplicatie e nefolositoare!\n" +
+                    "Unde ai executabilul ai nevoie de un folder \"Note\" cu fisiere .wav ca note");
             }
         }
 
@@ -87,12 +95,19 @@ namespace FLStudio
 
             if (me.Button == MouseButtons.Left)
             {
-                (string, Color) t = _facade.AddNote(notePath, posX, posY);
-                b.Text = t.Item1;
-                b.BackColor = t.Item2;
-                b.Font = new Font("Arial", 5);
-                Controls.Add(b);
-                b.BringToFront();
+                try
+                {
+                    (string, Color) t = _facade.AddNote(notePath, posX, posY);
+                    b.Text = t.Item1;
+                    b.BackColor = t.Item2;
+                    b.Font = new Font("Arial", 5);
+                    Controls.Add(b);
+                    b.BringToFront();
+                }
+                catch
+                {
+                    MessageBox.Show("Alege o nota mai intai, te rog!\nGasesti in lista din stanga note");
+                }
             }
         }
         /// <summary>
