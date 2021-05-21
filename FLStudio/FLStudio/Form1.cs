@@ -94,10 +94,6 @@ namespace FLStudio
                 Controls.Add(b);
                 b.BringToFront();
             }
-            else
-            {
-                //nothing
-            }
         }
         /// <summary>
         /// Starts simulation.
@@ -127,6 +123,7 @@ namespace FLStudio
 
         private void textboxNote_Click(object sender, EventArgs e)
         {
+            _facade.SaveSimulation("Dada");
             pictureBox.Enabled = true;
         }
 
@@ -146,5 +143,45 @@ namespace FLStudio
             }
         }
         #endregion
+
+        private void buttonExportWav_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialogWav.Filter = "WAV File(*.wav)|*.wav";
+                saveFileDialogWav.ShowDialog();
+                _facade.ExportSimulationAsWAV(saveFileDialogWav.FileName);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
+        }
+
+        private void buttonLoadSimulation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSaveSimulation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialogWav.Filter = "Text File(*.txt)|*.txt";
+                saveFileDialogWav.ShowDialog();
+                _facade.SaveSimulation(saveFileDialogWav.FileName);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

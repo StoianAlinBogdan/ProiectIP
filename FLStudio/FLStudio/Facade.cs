@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 using Note;
 using NotesInfo;
 using Simulation;
@@ -169,6 +173,50 @@ namespace FLStudio
             _playBar.PlaySpeed = speed;
         }
 
+        public void ExportSimulationAsWAV(string path)
+        {
+            List<AudioFileReader> readers = new List<AudioFileReader>();
+            List<MixingSampleProvider> mixers = new List<MixingSampleProvider>();
+            try
+            {
+                foreach (List<Note.Note> columnNotes in _notes)
+                {
+                    foreach (Note.Note note in columnNotes)
+                    {
+                        readers.Add(new AudioFileReader(note.PathToNote));
+                    }
+                    mixers.Add(new MixingSampleProvider(readers));
+                }
+                ConcatenatingSampleProvider csp = new ConcatenatingSampleProvider(mixers);
+                WaveFileWriter.CreateWaveFile(path, csp.ToWaveProvider16());
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
 
+        public void SaveSimulation(string path)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(path);
+
+                sw.WriteLine("fl_simulation_ip");
+                sw.WriteLine(_notes.Length);
+                foreach (List<Note.Note> columnNotes in _notes)
+                {
+                    foreach (Note.Note note in columnNotes)
+                    {
+                        string entry = note.XPosition + "\t" + note.YPosition + "\t" + note.PathToNote;
+                        sw.WriteLine(entry);
+                    }
+                }
+                sw.Close();
+            } catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error");
+            }
+        }
     }
 }
