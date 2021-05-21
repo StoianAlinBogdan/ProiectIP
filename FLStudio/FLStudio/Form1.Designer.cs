@@ -35,17 +35,18 @@ namespace FLStudio
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.trackBarSpeed = new System.Windows.Forms.TrackBar();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textboxNote = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonSaveSimulation = new System.Windows.Forms.Button();
+            this.buttonLoadSimulation = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.buttonExportWav = new System.Windows.Forms.Button();
             this.saveFileDialogWav = new System.Windows.Forms.SaveFileDialog();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonLoadSimulation = new System.Windows.Forms.Button();
-            this.buttonSaveSimulation = new System.Windows.Forms.Button();
             this.saveFileDialogSimulation = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogLoad = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -112,6 +113,16 @@ namespace FLStudio
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Notes";
+            // 
             // textboxNote
             // 
             this.textboxNote.FormattingEnabled = true;
@@ -150,35 +161,15 @@ namespace FLStudio
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
-            // buttonExportWav
+            // buttonSaveSimulation
             // 
-            this.buttonExportWav.Location = new System.Drawing.Point(145, 34);
-            this.buttonExportWav.Name = "buttonExportWav";
-            this.buttonExportWav.Size = new System.Drawing.Size(106, 27);
-            this.buttonExportWav.TabIndex = 0;
-            this.buttonExportWav.Text = "Export as .wav";
-            this.buttonExportWav.UseVisualStyleBackColor = true;
-            this.buttonExportWav.Click += new System.EventHandler(this.buttonExportWav_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Notes";
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(6, 34);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(108, 27);
-            this.buttonExit.TabIndex = 1;
-            this.buttonExit.Text = "Exit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonSaveSimulation.Location = new System.Drawing.Point(283, 34);
+            this.buttonSaveSimulation.Name = "buttonSaveSimulation";
+            this.buttonSaveSimulation.Size = new System.Drawing.Size(97, 27);
+            this.buttonSaveSimulation.TabIndex = 3;
+            this.buttonSaveSimulation.Text = "Save Simulation";
+            this.buttonSaveSimulation.UseVisualStyleBackColor = true;
+            this.buttonSaveSimulation.Click += new System.EventHandler(this.buttonSaveSimulation_Click);
             // 
             // buttonLoadSimulation
             // 
@@ -190,15 +181,29 @@ namespace FLStudio
             this.buttonLoadSimulation.UseVisualStyleBackColor = true;
             this.buttonLoadSimulation.Click += new System.EventHandler(this.buttonLoadSimulation_Click);
             // 
-            // buttonSaveSimulation
+            // buttonExit
             // 
-            this.buttonSaveSimulation.Location = new System.Drawing.Point(283, 34);
-            this.buttonSaveSimulation.Name = "buttonSaveSimulation";
-            this.buttonSaveSimulation.Size = new System.Drawing.Size(97, 27);
-            this.buttonSaveSimulation.TabIndex = 3;
-            this.buttonSaveSimulation.Text = "Save Simulation";
-            this.buttonSaveSimulation.UseVisualStyleBackColor = true;
-            this.buttonSaveSimulation.Click += new System.EventHandler(this.buttonSaveSimulation_Click);
+            this.buttonExit.Location = new System.Drawing.Point(6, 34);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(108, 27);
+            this.buttonExit.TabIndex = 1;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // buttonExportWav
+            // 
+            this.buttonExportWav.Location = new System.Drawing.Point(145, 34);
+            this.buttonExportWav.Name = "buttonExportWav";
+            this.buttonExportWav.Size = new System.Drawing.Size(106, 27);
+            this.buttonExportWav.TabIndex = 0;
+            this.buttonExportWav.Text = "Export as .wav";
+            this.buttonExportWav.UseVisualStyleBackColor = true;
+            this.buttonExportWav.Click += new System.EventHandler(this.buttonExportWav_Click);
+            // 
+            // openFileDialogLoad
+            // 
+            this.openFileDialogLoad.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -243,6 +248,7 @@ namespace FLStudio
         private System.Windows.Forms.Button buttonLoadSimulation;
         private System.Windows.Forms.Button buttonSaveSimulation;
         private System.Windows.Forms.SaveFileDialog saveFileDialogSimulation;
+        private System.Windows.Forms.OpenFileDialog openFileDialogLoad;
     }
 }
 

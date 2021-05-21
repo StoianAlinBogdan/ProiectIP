@@ -181,7 +181,44 @@ namespace FLStudio
 
         private void buttonLoadSimulation_Click(object sender, EventArgs e)
         {
+            openFileDialogLoad.Filter = "Text Files(*.txt)|*.txt";
+            if (openFileDialogLoad.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
 
+            try
+            {
+                string[] notes = _facade.LoadSimulation(openFileDialogLoad.FileName);
+                foreach (Control control in Controls)
+                    if (control is Button)
+                        Controls.Remove(control);
+
+                for (int i = 2; i < notes.Length; i++)
+                {
+                    string[] noteData = notes[i].Split('\t');
+
+                    Button b = new Button();
+
+                    int posX = int.Parse(noteData[0]);
+                    int posY = int.Parse(noteData[1]);
+
+                    b.Size = new Size(50, 20);
+                    b.Location = new Point(pictureBox.Location.X + posX + 5, pictureBox.Location.Y + posY);
+
+                    (string, Color) t = _facade.AddNote(noteData[2].Substring(5), posX, posY);
+
+                    b.Text = t.Item1;
+                    b.BackColor = t.Item2;
+                    b.Font = new Font("Arial", 5);
+                    Controls.Add(b);
+                    b.BringToFront();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonSaveSimulation_Click(object sender, EventArgs e)

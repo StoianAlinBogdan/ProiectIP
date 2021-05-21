@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
@@ -210,6 +211,33 @@ namespace FLStudio
             } catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Error");
+            }
+        }
+
+        public string[] LoadSimulation(string path, string key = "fl_simulation_ip")
+        {
+            string[] lines = null;
+            try
+            {
+                lines = File.ReadAllLines(path, Encoding.UTF8);
+
+                if (lines[0] != key)
+                {
+                    throw new Exception("File with unknown header!");
+                }
+
+                int columns = int.Parse(lines[1]);
+                foreach (List<Note.Note> columnNotes in _notes)
+                    columnNotes.Clear();
+
+
+                return lines;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error");
+                return lines;
             }
         }
     }
