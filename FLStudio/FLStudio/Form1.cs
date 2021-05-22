@@ -137,6 +137,11 @@ namespace FLStudio
         }
 
         #region Alex: Stergere note de la  tastatura(tasta D) si play la nota respectiva tot de la tastatura(tasta P)
+        /// <summary>
+        /// Delete a note block when D key is pressed and play a note when P key is pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -152,7 +157,11 @@ namespace FLStudio
             }
         }
         #endregion
-
+        /// <summary>
+        /// Callback function for export .wav button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonExportWav_Click(object sender, EventArgs e)
         {
             try
@@ -167,12 +176,20 @@ namespace FLStudio
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Callback function for exit button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
         }
-
+        /// <summary>
+        /// Callback function for load simulation file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonLoadSimulation_Click(object sender, EventArgs e)
         {
             openFileDialogLoad.Filter = "Text Files(*.txt)|*.txt";
@@ -214,7 +231,11 @@ namespace FLStudio
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Callback function for save simulation file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSaveSimulation_Click(object sender, EventArgs e)
         {
             try
@@ -229,7 +250,11 @@ namespace FLStudio
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Callback function for help button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             
@@ -242,7 +267,11 @@ namespace FLStudio
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Callback function for restart button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonRestart_Click(object sender, EventArgs e)
         {
             timer1.Enabled = false;

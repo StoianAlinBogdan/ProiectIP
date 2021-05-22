@@ -63,6 +63,12 @@ namespace FLStudio
         }
 
         #region Alex: Stergere control si nota cand apasam tasta D
+        /// <summary>
+        /// Remove a note block.
+        /// </summary>
+        /// <param name="controls"></param>
+        /// <param name="pictureBoxX"></param>
+        /// <param name="pictureBoxY"></param>
         public void DeleteNote(Control.ControlCollection controls, int pictureBoxX, int pictureBoxY)
         {
 
@@ -88,7 +94,12 @@ namespace FLStudio
                 }
             }
         }
-
+        /// <summary>
+        /// Play a note block.
+        /// </summary>
+        /// <param name="controls"></param>
+        /// <param name="pictureBoxX"></param>
+        /// <param name="pictureBoxY"></param>
         public void playANote(Control.ControlCollection controls, int pictureBoxX, int pictureBoxY)
         {
             foreach (Control control in controls)
@@ -167,7 +178,12 @@ namespace FLStudio
         {
             _playBar.Reset();
         }
-
+        /// <summary>
+        /// Update the tempo.
+        /// </summary>
+        /// <param name="speed"></param>
+        /// <param name="timer"></param>
+        /// <returns></returns>
         public bool ChangeSimulationSpeed(int speed, Timer timer)
         {
             if (speed <= 0)
@@ -177,7 +193,10 @@ namespace FLStudio
             _playBar.PlaySpeed = speed;
             return true;
         }
-
+        /// <summary>
+        /// Export simulation as .wav file.
+        /// </summary>
+        /// <param name="path"></param>
         public void ExportSimulationAsWAV(string path)
         {
             List<AudioFileReader> readers = new List<AudioFileReader>();
@@ -200,7 +219,10 @@ namespace FLStudio
                 MessageBox.Show(e.Message);
             }
         }
-
+        /// <summary>
+        /// Save an editable simulation file.
+        /// </summary>
+        /// <param name="path"></param>
         public void SaveSimulation(string path)
         {
             try
@@ -222,7 +244,12 @@ namespace FLStudio
                 MessageBox.Show(e.Message, "Error");
             }
         }
-
+        /// <summary>
+        /// Load an editable simulation file.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public string[] LoadSimulation(string path, string key = "fl_simulation_ip")
         {
             string[] lines = null;

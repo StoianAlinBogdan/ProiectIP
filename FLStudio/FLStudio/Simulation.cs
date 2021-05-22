@@ -30,30 +30,43 @@ namespace FLStudio
             _bar = new Rectangle(x, y, width, height);
             _playSpeed = playSpeed;
         }
-
+        /// <summary>
+        ///   Getter for the bar object.
+        /// </summary>
         public Rectangle Bar {
             get { return _bar; }
         }
-
+        /// <summary>
+        /// Getter for x position of the bar.
+        /// </summary>
         public int GetPlayBarX {
             get { return _bar.X; }    
         }
-
+        /// <summary>
+        /// Getter for bar width.
+        /// </summary>
         public int GetPlayBarWidth
         {
             get { return _bar.Width; }
         }
-
+        /// <summary>
+        /// Move the bar with an offset.
+        /// </summary>
+        /// <param name="offset"></param>
         public void MoveBar(int offset)
         {
             _bar.X += offset;
         }
-
+        /// <summary>
+        /// Resets the bar to initial position.
+        /// </summary>
         public void Reset()
         {
             _bar.X = 0;
         }
-
+        /// <summary>
+        /// Getter and setter for  _playSpeed.
+        /// </summary>
         public int PlaySpeed
         {
             get
