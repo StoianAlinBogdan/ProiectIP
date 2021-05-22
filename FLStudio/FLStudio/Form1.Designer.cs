@@ -40,6 +40,7 @@ namespace FLStudio
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonSaveSimulation = new System.Windows.Forms.Button();
             this.buttonLoadSimulation = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
@@ -131,7 +132,6 @@ namespace FLStudio
             this.textboxNote.Name = "textboxNote";
             this.textboxNote.Size = new System.Drawing.Size(113, 329);
             this.textboxNote.TabIndex = 0;
-            this.textboxNote.Click += new System.EventHandler(this.textboxNote_Click);
             // 
             // timer1
             // 
@@ -151,6 +151,7 @@ namespace FLStudio
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonHelp);
             this.groupBox3.Controls.Add(this.buttonSaveSimulation);
             this.groupBox3.Controls.Add(this.buttonLoadSimulation);
             this.groupBox3.Controls.Add(this.buttonExit);
@@ -161,9 +162,19 @@ namespace FLStudio
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Location = new System.Drawing.Point(566, 34);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(91, 27);
+            this.buttonHelp.TabIndex = 4;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
+            // 
             // buttonSaveSimulation
             // 
-            this.buttonSaveSimulation.Location = new System.Drawing.Point(283, 34);
+            this.buttonSaveSimulation.Location = new System.Drawing.Point(301, 34);
             this.buttonSaveSimulation.Name = "buttonSaveSimulation";
             this.buttonSaveSimulation.Size = new System.Drawing.Size(97, 27);
             this.buttonSaveSimulation.TabIndex = 3;
@@ -173,7 +184,7 @@ namespace FLStudio
             // 
             // buttonLoadSimulation
             // 
-            this.buttonLoadSimulation.Location = new System.Drawing.Point(409, 34);
+            this.buttonLoadSimulation.Location = new System.Drawing.Point(435, 34);
             this.buttonLoadSimulation.Name = "buttonLoadSimulation";
             this.buttonLoadSimulation.Size = new System.Drawing.Size(96, 27);
             this.buttonLoadSimulation.TabIndex = 2;
@@ -183,7 +194,7 @@ namespace FLStudio
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(6, 34);
+            this.buttonExit.Location = new System.Drawing.Point(10, 34);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(108, 27);
             this.buttonExit.TabIndex = 1;
@@ -193,7 +204,7 @@ namespace FLStudio
             // 
             // buttonExportWav
             // 
-            this.buttonExportWav.Location = new System.Drawing.Point(145, 34);
+            this.buttonExportWav.Location = new System.Drawing.Point(158, 34);
             this.buttonExportWav.Name = "buttonExportWav";
             this.buttonExportWav.Size = new System.Drawing.Size(106, 27);
             this.buttonExportWav.TabIndex = 0;
@@ -249,6 +260,7 @@ namespace FLStudio
         private System.Windows.Forms.Button buttonSaveSimulation;
         private System.Windows.Forms.SaveFileDialog saveFileDialogSimulation;
         private System.Windows.Forms.OpenFileDialog openFileDialogLoad;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }
 

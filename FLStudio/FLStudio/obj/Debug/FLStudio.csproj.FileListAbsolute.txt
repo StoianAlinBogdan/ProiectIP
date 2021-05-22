@@ -110,3 +110,5 @@ D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\Simulation.dll
 D:\SEMESTRU_2\ProiectIP\FLStudio\FLStudio\bin\Debug\Simulation.pdb
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\ProiectIP\FLStudio\FLStudio\bin\Debug\Simulation.dll
 C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\ProiectIP\FLStudio\FLStudio\bin\Debug\Simulation.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\FLStudio\bin\Debug\Simulation.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\FLStudio\bin\Debug\Simulation.pdb

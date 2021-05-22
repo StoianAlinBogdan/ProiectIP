@@ -136,12 +136,6 @@ namespace FLStudio
             _facade.ChangeSimulationSpeed(trackBarSpeed.Value, timer1);
         }
 
-        private void textboxNote_Click(object sender, EventArgs e)
-        {
-            _facade.SaveSimulation("Dada");
-            pictureBox.Enabled = true;
-        }
-
         #region Alex: Stergere note de la  tastatura(tasta D) si play la nota respectiva tot de la tastatura(tasta P)
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -229,6 +223,19 @@ namespace FLStudio
                 saveFileDialogWav.ShowDialog();
                 _facade.SaveSimulation(saveFileDialogWav.FileName);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                System.Diagnostics.Process.Start("FLStudio Help File.chm");
             }
             catch (Exception ex)
             {
