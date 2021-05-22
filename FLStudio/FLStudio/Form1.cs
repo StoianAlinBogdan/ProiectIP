@@ -104,9 +104,9 @@ namespace FLStudio
                     Controls.Add(b);
                     b.BringToFront();
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Alege o nota mai intai, te rog!\nGasesti in lista din stanga note");
+                    MessageBox.Show("Alege o nota mai intai, te rog!\nGasesti in lista din stanga note" + ex.Message);
                 }
             }
         }

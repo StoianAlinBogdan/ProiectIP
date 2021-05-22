@@ -46,12 +46,18 @@ namespace FLStudio
         /// <returns></returns>
         public (string, System.Drawing.Color) AddNote(string notePath, int posX, int posY)
         {
-            
-            string[] props = NotesInfo.NotesInfo.Properties[notePath];
-            System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
-            Note.Note n = new Note.Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
-            _notes[posX / 55].Add(n);
-            return (props[0], systemColor);
+            try
+            {
+                string[] props = NotesInfo.NotesInfo.Properties[notePath];
+                System.Drawing.Color systemColor = System.Drawing.Color.FromName(props[1]);
+                Note.Note n = new Note.Note("Note\\" + notePath, new System.Drawing.Point(posX, posY), systemColor);
+                _notes[posX / 55].Add(n);
+                return (props[0], systemColor);
+            }
+            catch(KeyNotFoundException ex)
+            {
+                throw new Exception("\nCalea notei este incorecta sau nu exista." );
+            }
          
             
         }
