@@ -33,6 +33,7 @@ namespace FLStudio
             this.buttonStartSimulare = new System.Windows.Forms.Button();
             this.viteza = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonRestart = new System.Windows.Forms.Button();
             this.trackBarSpeed = new System.Windows.Forms.TrackBar();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +59,7 @@ namespace FLStudio
             // buttonStartSimulare
             // 
             this.buttonStartSimulare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStartSimulare.Location = new System.Drawing.Point(23, 17);
+            this.buttonStartSimulare.Location = new System.Drawing.Point(36, 17);
             this.buttonStartSimulare.Margin = new System.Windows.Forms.Padding(2);
             this.buttonStartSimulare.Name = "buttonStartSimulare";
             this.buttonStartSimulare.Size = new System.Drawing.Size(106, 31);
@@ -80,6 +81,7 @@ namespace FLStudio
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonRestart);
             this.groupBox1.Controls.Add(this.trackBarSpeed);
             this.groupBox1.Controls.Add(this.viteza);
             this.groupBox1.Controls.Add(this.buttonStartSimulare);
@@ -90,6 +92,17 @@ namespace FLStudio
             this.groupBox1.Size = new System.Drawing.Size(550, 63);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // buttonRestart
+            // 
+            this.buttonRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRestart.Location = new System.Drawing.Point(179, 17);
+            this.buttonRestart.Name = "buttonRestart";
+            this.buttonRestart.Size = new System.Drawing.Size(127, 31);
+            this.buttonRestart.TabIndex = 4;
+            this.buttonRestart.Text = "Restart Simulation";
+            this.buttonRestart.UseVisualStyleBackColor = true;
+            this.buttonRestart.Click += new System.EventHandler(this.buttonRestart_Click);
             // 
             // trackBarSpeed
             // 
@@ -261,6 +274,7 @@ namespace FLStudio
         private System.Windows.Forms.SaveFileDialog saveFileDialogSimulation;
         private System.Windows.Forms.OpenFileDialog openFileDialogLoad;
         private System.Windows.Forms.Button buttonHelp;
+        private System.Windows.Forms.Button buttonRestart;
     }
 }
 

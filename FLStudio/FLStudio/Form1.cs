@@ -242,5 +242,12 @@ namespace FLStudio
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonRestart_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            _facade.ResetBar();
+            pictureBox.Invalidate();
+        }
     }
 }
