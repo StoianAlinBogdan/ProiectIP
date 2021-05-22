@@ -1,16 +1,7 @@
 fl_simulation_ip
-11
-0	40	Note\b3.wav
-0	180	Note\d-5.wav
-0	0	Note\a-5.wav
-55	0	Note\a-5.wav
-110	280	Note\d5.wav
-110	0	Note\a-5.wav
-165	240	Note\d5.wav
-165	140	Note\d5.wav
-165	200	Note\a5.wav
-275	20	Note\d5.wav
-275	220	Note\d5.wav
-385	260	Note\d5.wav
-385	60	Note\a5.wav
-440	260	Note\d5.wav
+0	60	Note\b3.wav
+55	160	Note\b3.wav
+110	100	Note\b3.wav
+220	240	Note\b3.wav
+275	100	Note\b3.wav
+330	200	Note\b3.wav

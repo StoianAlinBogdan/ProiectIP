@@ -4,3 +4,9 @@ C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\NotesInfo\obj\Debug\NotesInfo.c
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\NotesInfo\obj\Debug\NotesInfo.dll
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\NotesInfo\obj\Debug\NotesInfo.pdb
 C:\Users\andre\Desktop\An_III\Sem II\IP\FLStudio\NotesInfo\obj\Debug\NotesInfo.csprojAssemblyReference.cache
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\NotesInfo\bin\Debug\NotesInfo.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\NotesInfo\bin\Debug\NotesInfo.pdb
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\NotesInfo\obj\Debug\NotesInfo.csprojAssemblyReference.cache
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\NotesInfo\obj\Debug\NotesInfo.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\NotesInfo\obj\Debug\NotesInfo.dll
+C:\Users\andre\Desktop\An_III\Sem II\IP\Proiect\FLStudio\NotesInfo\obj\Debug\NotesInfo.pdb

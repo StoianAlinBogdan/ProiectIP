@@ -162,10 +162,14 @@ namespace FLStudio
             _playBar.Reset();
         }
 
-        public void ChangeSimulationSpeed(int speed, Timer timer)
+        public bool ChangeSimulationSpeed(int speed, Timer timer)
         {
+            if (speed <= 0)
+                return false;
+
             timer.Interval += (_playBar.PlaySpeed - speed) * 100;
             _playBar.PlaySpeed = speed;
+            return true;
         }
 
         public void ExportSimulationAsWAV(string path)
@@ -198,7 +202,6 @@ namespace FLStudio
                 StreamWriter sw = new StreamWriter(path);
 
                 sw.WriteLine("fl_simulation_ip");
-                sw.WriteLine(_notes.Length);
                 foreach (List<Note.Note> columnNotes in _notes)
                 {
                     foreach (Note.Note note in columnNotes)
@@ -217,28 +220,18 @@ namespace FLStudio
         public string[] LoadSimulation(string path, string key = "fl_simulation_ip")
         {
             string[] lines = null;
-            try
+            lines = File.ReadAllLines(path, Encoding.UTF8);
+
+            if (lines[0] != key)
             {
-                lines = File.ReadAllLines(path, Encoding.UTF8);
-
-                if (lines[0] != key)
-                {
-                    throw new Exception("File with unknown header!");
-                }
-
-                int columns = int.Parse(lines[1]);
-                foreach (List<Note.Note> columnNotes in _notes)
-                    columnNotes.Clear();
-
-
-                return lines;
-
+                throw new Exception("File with unknown header!");
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Error");
-                return lines;
-            }
+
+            foreach (List<Note.Note> columnNotes in _notes)
+                columnNotes.Clear();
+
+
+            return lines;
         }
     }
 }

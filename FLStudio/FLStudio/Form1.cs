@@ -188,7 +188,7 @@ namespace FLStudio
                     if (control is Button)
                         Controls.Remove(control);
 
-                for (int i = 2; i < notes.Length; i++)
+                for (int i = 1; i < notes.Length; i++)
                 {
                     string[] noteData = notes[i].Split('\t');
 
