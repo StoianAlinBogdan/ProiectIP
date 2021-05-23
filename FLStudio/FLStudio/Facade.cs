@@ -1,4 +1,20 @@
-﻿using System;
+﻿/********************************************************************************
+ *                                                                              *
+ *  File:        Facade.cs                                                      *
+ *  Copyright:   (c) 2021, A.A. Harpa, M.S. Sirghi, A.B. Stoian, A. Zbereanu    *
+ *  Description: The project is powered by the Windows Forms Application and    *
+ *               its implementation is based on the facade design pattern       *
+ *               which is meant to strip away the complexity of the app         *
+ *               while providing an interface to access the functionalities.    *
+ *                                                                              *
+ *  This code and information is provided "as is" without warranty of any kind, *
+ *  either expressed or implied, including but not limited to the implied       *
+ *  warranties of merchantability or fitness for a particular purpose. You are  *
+ *  free to use this source code in your applications as long as the original   * 
+ *  copyright notice is included.                                               *
+ *                                                                              *
+ ********************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
