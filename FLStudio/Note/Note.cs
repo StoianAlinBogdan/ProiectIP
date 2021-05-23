@@ -42,7 +42,9 @@ namespace Note
                 return _position.X;
             }
         }
-
+        /// <summary>
+        /// Getter for y position of a note.
+        /// </summary>
         public int YPosition
         {
             get
